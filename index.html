@@ -225,23 +225,54 @@
       font-size: var(--text-sm);
     }
 
-    /* Hero split */
+    /* Hero section with background image + overlay */
     .hero {
-      background: linear-gradient(135deg, #FFF8F0 0%, var(--bg-white) 100%);
+      position: relative;
+      background: linear-gradient(90deg, rgba(0,0,0,0.65), rgba(0,0,0,0.55)), url('https://ik.imagekit.io/puuz06/79209138_757392748063800_2976154058269655040_n.jpg');
+      background-size: cover;
+      background-position: center 30%;
+      background-repeat: no-repeat;
+      color: white;
     }
     .hero-grid {
       display: flex;
       align-items: center;
-      gap: var(--space-2xl);
+      min-height: 560px;
     }
-    .hero .copy { width: 55%; }
-    .hero .media { width: 45%; min-height: 320px; }
-    .hero .media img {
+    .hero .copy {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-soft);
+      max-width: 620px;
+    }
+    /* Hero text colours for readability */
+    .hero h1,
+    .hero .lead,
+    .hero .pre-headline,
+    .hero .trust-row .badge,
+    .hero .badge i {
+      color: white;
+    }
+    .hero .pre-headline {
+      color: #F9A15B;  /* brighter copper variant for contrast */
+    }
+    .hero .badge {
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(2px);
+      color: white;
+    }
+    .hero .btn-secondary {
+      border-color: white;
+      color: white;
+    }
+    .hero .btn-secondary:hover {
+      background: white;
+      color: var(--accent);
+    }
+    .hero .btn-primary {
+      background: var(--accent);
+      color: white;
+    }
+    .hero .btn-primary:hover {
+      background: var(--accent-hover);
     }
 
     /* Gallery images */
@@ -402,8 +433,8 @@
       h1 { font-size: 36px; }
       h2 { font-size: 28px; }
       body { font-size: var(--text-base); }
-      .hero-grid { flex-direction: column-reverse; text-align: center; }
-      .hero .copy, .hero .media { width: 100%; }
+      .hero-grid { min-height: 480px; justify-content: center; text-align: center; }
+      .hero .copy { max-width: 100%; }
       .trust-row { justify-content: center; }
       .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; text-align: center; gap: var(--space-lg); }
@@ -460,7 +491,7 @@
 </header>
 
 <main>
-  <!-- 1. HERO (Capture) -->
+  <!-- 1. HERO (Background image + overlay, text readability optimised) -->
   <section class="hero section">
     <div class="container hero-grid">
       <div class="copy">
@@ -476,9 +507,6 @@
           <div class="badge"><i class="fas fa-solar-panel"></i> Solar Experts</div>
           <div class="badge"><i class="fas fa-certificate"></i> Certified Master Tradesmen</div>
         </div>
-      </div>
-      <div class="media">
-        <img src="https://ik.imagekit.io/puuz06/79209138_757392748063800_2976154058269655040_n.jpg" alt="Copper reticulation manifold installation, Windhoek" loading="eager">
       </div>
     </div>
   </section>
