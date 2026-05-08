@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Gerson Plumbing & Construction | Expert Plumbing & Civil Works in Windhoek</title>
+  <meta name="description" content="Expert plumbing, solar geyser installations, copper reticulation, and civil construction services in Windhoek, Namibia. Request a free site inspection today.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.gersonplumbing.com.na">
+  <!-- Google Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* ---------- DESIGN TOKENS (Blueprint Overrides + Quality Standards) ---------- */
+    :root {
+      /* Brand Colors – exact from blueprint */
+      --bg-white: #FFFFFF;
+      --text-primary: #1A202C;      /* high contrast */
+      --text-secondary: #4B5563;
+      --accent: #B45309;             /* warm copper – primary CTA */
+      --accent-hover: #9A3E05;
+      --accent-light: #FFF4E6;
+      --border-color: #E5E7EB;
+      --concrete: #9CA3AF;
+      --navy: #2D3748;
+
+      /* Typography */
+      --font-heading: 'Montserrat', system-ui, sans-serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+
+      /* Font scale (desktop) */
+      --text-xs: 12px;
+      --text-sm: 14px;
+      --text-base: 16px;
+      --text-lg: 18px;
+      --text-xl: 20px;
+      --text-2xl: 24px;
+      --text-3xl: 32px;
+      --text-4xl: 48px;
+      --text-5xl: 56px;
+
+      /* Spacing (8px base) */
+      --space-xs: 8px;
+      --space-sm: 16px;
+      --space-md: 24px;
+      --space-lg: 32px;
+      --space-xl: 48px;
+      --space-2xl: 64px;
+      --space-3xl: 100px;
+
+      /* Borders & Shadows */
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      --shadow-soft: 0 6px 18px rgba(26,32,44,0.06);
+      --shadow-lift: 0 12px 30px rgba(26,32,44,0.08);
+      --shadow-accent: 0 4px 14px 0 rgba(180,83,9,0.25);
+
+      --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      --container-max: 1200px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: var(--text-lg);
+      line-height: 1.6;
+      color: var(--text-secondary);
+      background: var(--bg-white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--text-primary);
+      margin-bottom: var(--space-sm);
+    }
+
+    h1 { font-size: var(--text-5xl); letter-spacing: -0.02em; margin-bottom: var(--space-md); }
+    h2 { font-size: var(--text-4xl); margin-bottom: var(--space-lg); }
+    h3 { font-size: var(--text-2xl); margin-bottom: var(--space-xs); }
+
+    .pre-headline {
+      font-family: var(--font-heading);
+      font-size: var(--text-sm);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      display: block;
+      margin-bottom: var(--space-sm);
+    }
+
+    .lead {
+      font-size: var(--text-xl);
+      color: var(--text-secondary);
+      margin-bottom: var(--space-xl);
+    }
+
+    .container {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+    }
+
+    .section {
+      padding: var(--space-3xl) 0;
+    }
+
+    .bg-light {
+      background-color: #F9FAFB;
+    }
+
+    /* Grid */
+    .grid-2, .grid-3, .grid-4 {
+      display: grid;
+      gap: var(--space-xl);
+    }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 16px 40px;
+      border-radius: var(--radius-lg);
+      transition: all var(--transition);
+      cursor: pointer;
+      text-decoration: none;
+      border: none;
+      min-height: 52px;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+      box-shadow: var(--shadow-accent);
+    }
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lift);
+    }
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid var(--accent);
+      color: var(--accent);
+    }
+    .btn-secondary:hover {
+      background: var(--accent);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* Cards */
+    .card {
+      background: var(--bg-white);
+      border-radius: var(--radius-lg);
+      padding: var(--space-lg);
+      box-shadow: var(--shadow-soft);
+      transition: all var(--transition);
+      height: 100%;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lift);
+    }
+
+    /* Step card with badge */
+    .step-card {
+      position: relative;
+      background: var(--bg-white);
+      padding: var(--space-lg);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      margin-top: var(--space-md);
+    }
+    .step-card::before {
+      content: attr(data-step);
+      position: absolute;
+      top: -20px;
+      left: 24px;
+      background: var(--accent);
+      color: white;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.5rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    /* Trust badges */
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-md);
+      margin-top: var(--space-xl);
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent-light);
+      padding: 10px 20px;
+      border-radius: 40px;
+      color: var(--accent);
+      font-weight: 600;
+      font-size: var(--text-sm);
+    }
+
+    /* Hero split */
+    .hero {
+      background: linear-gradient(135deg, #FFF8F0 0%, var(--bg-white) 100%);
+    }
+    .hero-grid {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2xl);
+    }
+    .hero .copy { width: 55%; }
+    .hero .media { width: 45%; min-height: 320px; }
+    .hero .media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+    }
+
+    /* Gallery images */
+    .gallery-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: var(--radius-md);
+      margin-bottom: var(--space-md);
+    }
+
+    /* Recent projects grid */
+    .projects-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: var(--space-lg);
+      margin-top: var(--space-xl);
+    }
+    .project-item {
+      background: var(--bg-white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      transition: all var(--transition);
+    }
+    .project-item:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lift);
+    }
+    .project-item img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+    }
+    .project-item .caption {
+      padding: var(--space-md);
+      text-align: center;
+      font-weight: 600;
+      color: var(--text-primary);
+      border-top: 1px solid var(--border-color);
+    }
+
+    /* Contact form */
+    .form-card {
+      background: var(--bg-white);
+      padding: var(--space-xl);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--border-color);
+    }
+    .form-group {
+      margin-bottom: var(--space-md);
+    }
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: var(--space-xs);
+      color: var(--text-primary);
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 14px 18px;
+      border: 2px solid var(--border-color);
+      border-radius: var(--radius-md);
+      font-size: var(--text-base);
+      transition: var(--transition);
+      font-family: var(--font-body);
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(180,83,9,0.2);
+    }
+    .form-note {
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+      margin-top: var(--space-sm);
+    }
+
+    /* Sticky header + mobile menu */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+    }
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      font-size: 1.5rem;
+      font-family: var(--font-heading);
+      color: var(--navy);
+      text-decoration: none;
+    }
+    .logo img { height: 48px; width: auto; border-radius: 6px; }
+    .nav-links {
+      display: flex;
+      gap: var(--space-xl);
+      align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 600;
+      color: var(--text-primary);
+      transition: color var(--transition);
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: var(--navy);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--navy);
+      color: #D1D5DB;
+      padding: var(--space-2xl) 0 var(--space-xl);
+      margin-top: var(--space-2xl);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: var(--space-xl);
+      margin-bottom: var(--space-xl);
+    }
+    .footer a { color: #D1D5DB; text-decoration: none; }
+    .footer a:hover { color: var(--accent); }
+    .copyright {
+      text-align: center;
+      padding-top: var(--space-lg);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: var(--text-sm);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      h1 { font-size: 48px; }
+      h2 { font-size: 36px; }
+      .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .section { padding: var(--space-2xl) 0; }
+      h1 { font-size: 36px; }
+      h2 { font-size: 28px; }
+      body { font-size: var(--text-base); }
+      .hero-grid { flex-direction: column-reverse; text-align: center; }
+      .hero .copy, .hero .media { width: 100%; }
+      .trust-row { justify-content: center; }
+      .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; text-align: center; gap: var(--space-lg); }
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--bg-white);
+        flex-direction: column;
+        padding: var(--space-xl);
+        gap: var(--space-lg);
+        z-index: 999;
+        box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+      }
+      .nav-links.active { display: flex; }
+      .mobile-toggle { display: block; }
+      .btn { width: 100%; justify-content: center; }
+      .projects-gallery { grid-template-columns: 1fr; }
+    }
+
+    /* Accessibility */
+    .btn:focus-visible, .nav-links a:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Sticky Header -->
+<header class="site-header">
+  <div class="container header-container">
+    <a href="#" class="logo">
+      <img src="https://ik.imagekit.io/puuz06/c2b46c45-b0eb-42bc-9623-dd911d938b24.jpg" alt="Gerson Plumbing & Construction Logo" width="48" height="48">
+      <span></span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="btn btn-primary header-cta">Request a Free Site Inspection</a>
+    <button class="mobile-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main>
+  <!-- 1. HERO (Capture) -->
+  <section class="hero section">
+    <div class="container hero-grid">
+      <div class="copy">
+        <span class="pre-headline">Namibian Owned • Master Tradesmen</span>
+        <h1>Expert Plumbing & Construction Solutions in Windhoek</h1>
+        <p class="lead">From high-end solar geyser installations to heavy-duty civil infrastructure. Technically superior craftsmanship for Namibian homes and businesses.</p>
+        <div class="flex-buttons" style="display: flex; gap: var(--space-md); flex-wrap: wrap;">
+          <a href="#contact" class="btn btn-primary">Request a Free Site Inspection</a>
+          <a href="#projects" class="btn btn-secondary">View Our Work</a>
+        </div>
+        <div class="trust-row">
+          <div class="badge"><i class="fas fa-map-marker-alt"></i> Namibian Owned</div>
+          <div class="badge"><i class="fas fa-solar-panel"></i> Solar Experts</div>
+          <div class="badge"><i class="fas fa-certificate"></i> Certified Master Tradesmen</div>
+        </div>
+      </div>
+      <div class="media">
+        <img src="https://ik.imagekit.io/puuz06/79209138_757392748063800_2976154058269655040_n.jpg" alt="Copper reticulation manifold installation, Windhoek" loading="eager">
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. TRUST BADGES / WHY CHOOSE US (Authority) -->
+  <section class="section bg-light">
+    <div class="container">
+      <div class="pre-headline text-center" style="text-align: center;">Why Gerson</div>
+      <h2 class="text-center" style="text-align: center;">Precision. Power. Reliability.</h2>
+      <div class="grid-4" style="margin-top: var(--space-xl);">
+        <div class="card"><i class="fas fa-wrench" style="font-size: 2rem; color: var(--accent); margin-bottom: var(--space-sm); display: block;"></i><h3>Master Craftsmanship</h3><p>Precision copper soldering, manifold systems and high-pressure piping by certified experts.</p></div>
+        <div class="card"><i class="fas fa-sun" style="font-size: 2rem; color: var(--accent); margin-bottom: var(--space-sm); display: block;"></i><h3>Sustainable Energy</h3><p>Certified solar geyser installations to reduce electricity costs and carbon footprint.</p></div>
+        <div class="card"><i class="fas fa-hard-hat" style="font-size: 2rem; color: var(--accent); margin-bottom: var(--space-sm); display: block;"></i><h3>Civil Infrastructure</h3><p>Large-scale trenching, excavation & utility mapping for new developments.</p></div>
+        <div class="card"><i class="fas fa-home" style="font-size: 2rem; color: var(--accent); margin-bottom: var(--space-sm); display: block;"></i><h3>Turnkey Solutions</h3><p>Structural masonry to internal plumbing — seamless project execution.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. FEATURE HIGHLIGHTS / PAST WORK (Projects Gallery) -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="pre-headline" style="text-align: center;">Past Work</div>
+      <h2 style="text-align: center;">Built to last: Our signature projects</h2>
+      <div class="grid-3" style="margin-top: var(--space-xl);">
+        <div class="card">
+          <img src="https://ik.imagekit.io/puuz06/484904621_1373375784074623_4274936482875108951_n.jpg" alt="High-Pressure Copper Reticulation" class="gallery-img" loading="lazy">
+          <h3>High-Pressure Copper Reticulation</h3>
+          <p>Precision manifold & soldering for residential & commercial water supply.</p>
+        </div>
+        <div class="card">
+          <img src="https://ik.imagekit.io/puuz06/79600162_757388001397608_2526099283023757312_n.jpg" alt="Rooftop Solar Geyser Commissioning" class="gallery-img" loading="lazy">
+          <h3>Solar Geyser Installation</h3>
+          <p>Full rooftop integration & thermal regulation for sustainable hot water.</p>
+        </div>
+        <div class="card">
+          <img src="https://ik.imagekit.io/puuz06/482244582_1373376020741266_3252025015719525191_n.jpg" alt="Urban Drainage & Sewerage Networks" class="gallery-img" loading="lazy">
+          <h3>Civil Drainage & Sewerage</h3>
+          <p>Complex PVC waste-water networks and sub-surface drainage systems.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. HOW IT WORKS (Numbered Steps) -->
+  <section class="section bg-light">
+    <div class="container">
+      <div class="pre-headline" style="text-align: center;">Simple Process</div>
+      <h2 style="text-align: center;">How we bring your project to life</h2>
+      <div class="grid-4" style="margin-top: var(--space-xl);">
+        <div class="step-card" data-step="1"><h3>Site Inspection</h3><p>We assess your plumbing or construction requirements on-site, with no obligation.</p></div>
+        <div class="step-card" data-step="2"><h3>Technical Proposal</h3><p>Detailed quote with high-grade material specifications and project timeline.</p></div>
+        <div class="step-card" data-step="3"><h3>Professional Execution</h3><p>Our specialized team carries out the work with precision, safety, and minimal disruption.</p></div>
+        <div class="step-card" data-step="4"><h3>Final Handover</h3><p>Rigorous testing & cleanup before project completion – guaranteed quality.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. OFFERINGS / SERVICES -->
+  <section id="services" class="section">
+    <div class="container">
+      <div class="pre-headline" style="text-align: center;">What We Offer</div>
+      <h2 style="text-align: center;">Comprehensive mechanical & civil solutions</h2>
+      <div class="grid-4" style="margin-top: var(--space-xl);">
+        <div class="card"><i class="fas fa-solar-panel" style="font-size: 2rem; color: var(--accent); margin-bottom: var(--space-sm);"></i><h3>Solar Geyser Installation</h3><p>Rooftop mounting, thermal integration, and maintenance.</p></div>
+        <div class="card"><i class="fas fa-water" style="font-size: 2rem; color: var(--accent); margin-bottom: var(--space-sm);"></i><h3>Copper & PVC Systems</h3><p>Precision soldering for high-pressure supply and waste-water networks.</p></div>
+        <div class="card"><i class="fas fa-tractor" style="font-size: 2rem; color: var(--accent); margin-bottom: var(--space-sm);"></i><h3>Infrastructure & Trenching</h3><p>Groundworks for utility laying, sub-surface drainage & excavations.</p></div>
+        <div class="card"><i class="fas fa-hard-hat" style="font-size: 2rem; color: var(--accent); margin-bottom: var(--space-sm);"></i><h3>Masonry & Brickwork</h3><p>Structural walls, renovations, boundary walls and full site management.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. ABOUT US -->
+  <section id="about" class="section bg-light">
+    <div class="container">
+      <div class="grid-2" style="align-items: center;">
+        <div>
+          <span class="pre-headline">Our Story</span>
+          <h2>We combine technical plumbing with large‑scale construction</h2>
+          <p>Gerson Plumbing & Construction is a versatile mechanical and civil firm based in Windhoek, Namibia. We combine advanced copper soldering, solar thermal engineering, and infrastructure expertise — serving property developers, commercial contractors, and homeowners. Every project, big or small, reflects our values: precision, honesty, and durability.</p>
+          <div class="grid-2" style="margin-top: var(--space-lg); gap: var(--space-md);">
+            <div><span class="pre-headline" style="font-size: 2rem;">500+</span><p>Projects Completed</p></div>
+            <div><span class="pre-headline" style="font-size: 2rem;">100%</span><p>Namibian Owned</p></div>
+          </div>
+        </div>
+        <div>
+          <img src="https://ik.imagekit.io/puuz06/482236458_1373375970741271_7725791775659259520_n.jpg" alt="Team working on construction site" class="gallery-img" style="height: auto;" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. RECENT PROJECTS (replacing old Client Logos section) -->
+  <section class="section">
+    <div class="container">
+      <div class="pre-headline" style="text-align: center;">Our Recent Work</div>
+      <h2 style="text-align: center;">Real projects. Real craftsmanship.</h2>
+      <div class="projects-gallery">
+        <div class="project-item">
+          <img src="https://ik.imagekit.io/puuz06/482247513_1373375727407962_5136064877304686912_n.jpg?updatedAt=1778234538560" alt="Solar geyser installation on residential rooftop" loading="lazy">
+          <div class="caption"></div>
+        </div>
+        <div class="project-item">
+          <img src="https://ik.imagekit.io/puuz06/482236605_1373375920741276_4951615178970157134_n.jpg" alt="Copper pipe soldering and reticulation" loading="lazy">
+          <div class="caption"></div>
+        </div>
+        <div class="project-item">
+          <img src="https://ik.imagekit.io/puuz06/484904621_1373375784074623_4274936482875108951_n.jpg" alt="Civil drainage trenching works" loading="lazy">
+          <div class="caption"></div>
+        </div>
+        <div class="project-item">
+          <img src="https://ik.imagekit.io/puuz06/79600162_757388001397608_2526099283023757312_n.jpg" alt="Masonry wall construction" loading="lazy">
+          <div class="caption"></div>
+        </div>
+        <div class="project-item">
+          <img src="https://ik.imagekit.io/puuz06/489480564_2056323608170701_1980524122090895085_n.jpg" alt="Solar geyser array installation" loading="lazy">
+          <div class="caption"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. INDUSTRIES / AUDIENCE WE SERVE -->
+  <section class="section bg-light">
+    <div class="container">
+      <div class="pre-headline" style="text-align: center;">Who We Serve</div>
+      <h2 style="text-align: center;">Tailored expertise for every sector</h2>
+      <div class="grid-3" style="margin-top: var(--space-xl);">
+        <div class="card text-center"><i class="fas fa-home" style="font-size: 2rem; color: var(--accent); margin-bottom: var(--space-sm);"></i><h3>Residential Homeowners</h3><p>Solar retrofits, leak repairs, full bathroom renovations and geyser maintenance.</p></div>
+        <div class="card text-center"><i class="fas fa-building" style="font-size: 2rem; color: var(--accent); margin-bottom: var(--space-sm);"></i><h3>Property Developers</h3><p>New construction civil works, copper reticulation, and drainage infrastructure.</p></div>
+        <div class="card text-center"><i class="fas fa-hard-hat" style="font-size: 2rem; color: var(--accent); margin-bottom: var(--space-sm);"></i><h3>Commercial Contractors</h3><p>Plumbing subcontracting for multi-story buildings and commercial complexes.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. CONTACT + CONVERSION (Form) -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="grid-2" style="align-items: start;">
+        <div class="form-card">
+          <h3>Request a Free Site Inspection</h3>
+          <p>Tell us about your project, and we’ll get back to you within 24 hours.</p>
+          <form id="contact-form" action="#" method="POST">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" required placeholder="John Kamati">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" required placeholder="+264 81 234 5678">
+            </div>
+            <div class="form-group">
+              <label for="message">Project Details</label>
+              <textarea id="message" name="message" rows="3" placeholder="E.g., Solar geyser installation, new construction plumbing..."></textarea>
+            </div>
+            <button type="submit" id="submitBtn" class="btn btn-primary" style="width: 100%;">Send Request →</button>
+            <p class="form-note"><i class="fas fa-lock"></i> We reply within 48 hours. Your details are private.</p>
+          </form>
+        </div>
+        <div>
+          <h3>Get in touch directly</h3>
+          <div style="margin-bottom: var(--space-lg);">
+            <p><i class="fas fa-phone-alt" style="margin-right: 12px; color: var(--accent);"></i> <a href="tel:+264812709240" style="color: inherit; text-decoration: none;">+264 81 270 9240</a></p>
+            <p><i class="fas fa-envelope" style="margin-right: 12px; color: var(--accent);"></i> <a href="mailto:info@gersonplumbing.com" style="color: inherit;">info@gersonplumbing.com</a></p>
+            <p><i class="fas fa-map-marker-alt" style="margin-right: 12px; color: var(--accent);"></i> Kitchener Street, Windhoek, Namibia</p>
+            <p><i class="fab fa-whatsapp" style="margin-right: 12px; color: #25D366;"></i> <strong>WhatsApp:</strong> +264 81 270 9240</p>
+          </div>
+          <!-- Static map placeholder -->
+          <div style="background: #E5E7EB; border-radius: var(--radius-lg); height: 250px; display: flex; align-items: center; justify-content: center; color: var(--text-secondary);">📍 Kitchener Street, Windhoek</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- 10. FOOTER -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <img src="https://ik.imagekit.io/puuz06/c2b46c45-b0eb-42bc-9623-dd911d938b24.jpg" alt="Gerson Plumbing" width="55" style="border-radius: 8px;">
+      <p style="margin-top: var(--space-sm);">Technically superior plumbing and civil solutions – Windhoek's trusted mechanical & construction partner.</p>
+    </div>
+    <div>
+      <h4 style="color: white; margin-bottom: var(--space-md);">Quick Links</h4>
+      <a href="#services">Services</a><br><a href="#projects">Projects</a><br><a href="#about">About Us</a><br><a href="#contact">Contact</a>
+    </div>
+    <div>
+      <h4 style="color: white; margin-bottom: var(--space-md);">Services</h4>
+      <a href="#">Solar Geysers</a><br><a href="#">Copper Reticulation</a><br><a href="#">Civil Drainage</a><br><a href="#">Masonry Construction</a>
+    </div>
+    <div>
+      <h4 style="color: white; margin-bottom: var(--space-md);">Contact</h4>
+      <p><i class="fas fa-map-pin"></i> Kitchener Street, Windhoek</p>
+      <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/264812709240" target="_blank">WhatsApp Us</a></p>
+      <p><i class="fab fa-facebook"></i> <a href="https://www.facebook.com/GersonPlumbing" target="_blank">Facebook Page</a></p>
+    </div>
+  </div>
+  <div class="copyright">
+    &copy; 2025 Gerson Plumbing & Construction – All rights reserved. Namibian owned & operated.
+  </div>
+</footer>
+
+<script>
+  (function() {
+    // Mobile menu toggle
+    const toggle = document.querySelector('.mobile-toggle');
+    const nav = document.querySelector('.nav-links');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true' ? false : true;
+        nav.classList.toggle('active');
+        toggle.setAttribute('aria-expanded', expanded);
+      });
+      nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          nav.classList.remove('active');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === "#" || targetId === "") return;
+        const targetElem = document.querySelector(targetId);
+        if (targetElem) {
+          e.preventDefault();
+          targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+    // Contact form submission with loading state
+    const form = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submitBtn');
+    if (form && submitBtn) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const originalText = submitBtn.innerText;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Sending...';
+        setTimeout(() => {
+          alert('Thank you! We’ll contact you within 24 hours to schedule your free site inspection.');
+          form.reset();
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalText;
+        }, 800);
+      });
+    }
+  })();
+</script>
+
+<!-- JSON-LD Schema (LocalBusiness) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "Gerson Plumbing & Construction",
+  "image": "https://ik.imagekit.io/puuz06/c2b46c45-b0eb-42bc-9623-dd911d938b24.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Kitchener Street",
+    "addressLocality": "Windhoek",
+    "addressCountry": "NA"
+  },
+  "telephone": "+264812709240",
+  "url": "https://www.facebook.com/GersonPlumbing",
+  "description": "Expert plumbing, solar geyser installation, civil drainage, copper reticulation and construction services in Windhoek, Namibia.",
+  "priceRange": "$$",
+  "areaServed": { "@type": "City", "name": "Windhoek" },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Construction and Plumbing Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Solar Geyser Installation" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Copper Pipe Reticulation" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Civil Drainage & Sewerage" } }
+    ]
+  }
+}
+</script>
+</body>
+</html>
